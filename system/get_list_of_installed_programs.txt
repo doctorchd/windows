@@ -1,0 +1,9 @@
+https://kencenerelli.wordpress.com/2017/11/25/list-installed-programs-on-windows-10/
+
+1. Launch the Command Prompt by typing Command Prompt into the search box on the menu bar
+2. Right-click the app returned and select Run As Administrator
+3. At the prompt, specify wmic and press Enter
+4. The prompt changes to wmic:root\cli
+5. Specify /output:C:\InstalledPrograms.txt product get name,version and press EnterNote: Depending on the number of programs installed, it may take a few seconds for the list to be created. Once the list is complete, you are returned to the wmic:root\cli prompt.
+6. Close the Command Prompt
+7. Open the InstalledProgramsList.txt file in Notepad++. The Name and Version of every program installed on your computer are presented in table format.
