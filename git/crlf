@@ -1,0 +1,17 @@
+https://github.com/orgs/community/discussions/66838
+
+Configure Git to handle line endings correctly for your operating system 
+by setting the core.autocrlf configuration option.
+
+For Windows:
+git config --global core.autocrlf true
+
+For macOS/Linux:
+git config --global core.autocrlf input
+
+The "true" setting instructs Git to convert line endings to CRLF when 
+checking out files and to LF when committing files.
+
+In contrast, the "input" setting directs Git to convert line endings to 
+LF during commits while preserving them as is during checkouts.
+
