@@ -1,0 +1,34 @@
+* Install PowerShell for MacOS
+
+https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.5
+
+brew install --cask powershell
+
+* Run PowerShell
+
+pwsh
+
+* Install the Teams module
+
+Install-Module -Name PowerShellGet -Force -AllowClobber
+Install-Module -Name MicrosoftTeams -Force
+
+* Connect to Microsoft Teams
+
+Connect-MicrosoftTeams
+
+* Get the Group ID of the Team
+
+$teamName = "Комп'ютерні мережі"
+$group = Get-Team | Where-Object { $_.DisplayName -eq $teamName }
+$groupId = $group.GroupId
+
+* Get members of the Team
+
+$members = Get-TeamUser -GroupId $groupId
+
+* Export to CSV
+
+$members | Select-Object Name, User, Role | Export-Csv -Path "TeamMembers.csv" -NoTypeInformation
+
+
