@@ -31,4 +31,7 @@ $members = Get-TeamUser -GroupId $groupId
 
 $members | Select-Object Name, User, Role | Export-Csv -Path "TeamMembers.csv" -NoTypeInformation
 
+* Update data in bash
+
+sed -En '/member/ {s/\t/ /g;s/ /","/g;p;}' TeamMembers.csv | cut -d ',' -f 1,2,4 > students.csv
 
