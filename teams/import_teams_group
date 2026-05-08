@@ -1,0 +1,45 @@
+* Install PowerShell for MacOS
+
+https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.5
+
+brew install --cask powershell
+
+* Or upgrade
+
+brew update
+brew outdated
+brew upgrade
+
+* Run PowerShell
+
+pwsh
+
+* Install the Teams module
+
+Install-Module -Name MicrosoftTeams -Force
+
+* Connect to Microsoft Teams
+
+Connect-MicrosoftTeams
+(authenticate in the browser)
+
+* Get the Group ID of the Team
+
+$teamName = "Комп'ютерні мережі ПМ-2026"
+$group = Get-Team | Where-Object { $_.DisplayName -eq $teamName }
+$groupId = $group.GroupId
+
+* Add members to Team
+
+$members = Get-Content "./student_emails"
+
+foreach ($member in $members) {
+    Add-TeamUser -GroupId $groupId -User $member
+}
+
+Note: student_emails is a list of emails, one per line:
+user1@domain.com
+user2@domain.com
+user3@domain.com
+
+
