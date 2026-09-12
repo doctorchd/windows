@@ -15,7 +15,7 @@ Install-Module -Name MicrosoftTeams -Force
 
 * Connect to Microsoft Teams
 
-Connect-MicrosoftTeams
+Connect-MicrosoftTeams -DisableWAM
 
 * Get the Group ID of the Team
 
