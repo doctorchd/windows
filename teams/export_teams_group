@@ -2,7 +2,7 @@
 
 https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.5
 
-brew install --cask powershell
+brew install powershell
 
 * Run PowerShell
 
